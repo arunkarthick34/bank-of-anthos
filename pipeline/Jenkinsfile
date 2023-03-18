@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh """
                     cd src/frontend
-                    docker build .
+                    docker pull python
                 """
             }
         }
