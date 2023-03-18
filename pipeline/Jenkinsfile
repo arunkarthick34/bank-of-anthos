@@ -6,7 +6,6 @@ pipeline {
             steps {
                 sh """
                     cd src/frontend
-                    su root
                     docker build .
                 """
             }
