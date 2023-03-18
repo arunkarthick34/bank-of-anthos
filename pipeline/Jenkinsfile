@@ -5,7 +5,7 @@ pipeline {
         stage('docker Build') {
             steps {
                 sh """
-                    cd /src/frontend
+                    cd src/frontend
                     docker build -t gcr.io/bank-of-anthos-ci/frontend:v0.5.11 .
                 """
             }
