@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh """
                     cd src/frontend
+                    podman system migrate
                     docker pull python
                 """
             }
