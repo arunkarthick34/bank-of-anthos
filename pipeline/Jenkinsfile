@@ -7,7 +7,7 @@ pipeline {
                 sh """
                     cd src/frontend
                     docker build -t arunkarthick34/frontend:latest .
-                    docker image push  https://hub.docker.com/repository/docker/arunkarthick34/frontend
+                    docker image push arunkarthick34/frontend
                 """
             }
         }
