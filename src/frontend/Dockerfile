@@ -14,7 +14,7 @@
 
 # Use the official Python docker container, slim version, running Debian
 #@sha256:e38263b5fe3d95519afc3a17c0abbc50f6a1eba9d8881276770feb257df51600
-FROM python:slim as base
+FROM python as base
 
 FROM base as builder
 
