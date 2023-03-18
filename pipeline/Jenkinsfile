@@ -2,24 +2,24 @@ pipeline {
     agent any
 
     stages {
-//         stage('docker Build') {
-//             steps {
-//                 sh """
-//                     cd src/frontend
-//                     docker build -t frontend .
-//                 """
-//             }
-//         }
+        stage('docker Build') {
+            steps {
+                sh """
+                    cd src/frontend
+                    docker build -t frontend .
+                """
+            }
+        }
   
     
-    stage('Scan') {
-      steps {
-          sh "cd src/balancereader"
-        withSonarQubeEnv(installationName: 'sonar-qube') { 
-          sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-          //  sh "mvn clean install sonar:sonar"
-        }
-      }
-    }
+//     stage('Scan') {
+//       steps {
+//           sh "cd src/balancereader"
+//         withSonarQubeEnv(installationName: 'sonar-qube') { 
+//           sh './mvnw clean org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+//           //  sh "mvn clean install sonar:sonar"
+//         }
+//       }
+//     }
     }
 }
