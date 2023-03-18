@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh """
                     cd src/frontend
-                    docker build -t frontend:latest .
+                    docker build -t arunkarthick34/frontend:latest .
                     docker image push --all-tags arunkarthick34/frontend
                 """
             }
