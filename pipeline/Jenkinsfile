@@ -6,9 +6,6 @@ pipeline {
             steps {
                 sh """
                     cd src/frontend
-                    podman system migrate
-                    loginctl enable-linger 974
-                    podman system migrate
                     docker pull python
                 """
             }
