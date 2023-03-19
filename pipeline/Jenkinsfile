@@ -7,15 +7,25 @@ pipeline {
                 sh """
                     cd src/frontend
                     docker build -t arunkarthick34/frontend:latest .
-                    
                 """
+                }
+            }
+        }
+        
+        stage('docker Push') {
+            steps {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'dockerlogin', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
                   sh """docker login -u $USERNAME -p $PASSWORD docker.io
                   docker image push arunkarthick34/frontend
                   """
-                }
             }
         }
+            
+        stage('docker Push') {
+            steps {
+                sh "kubectl rollout restart deployment/frontend -n bank"
+            }
+        }                
   
     
 //     stage('Scan') {
