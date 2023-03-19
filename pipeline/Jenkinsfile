@@ -18,6 +18,7 @@ pipeline {
                   sh """docker login -u $USERNAME -p $PASSWORD docker.io
                   docker image push arunkarthick34/frontend
                   """
+                }
             }
         }
             
