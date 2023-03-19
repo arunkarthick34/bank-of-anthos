@@ -21,7 +21,7 @@ pipeline {
             }
         }
             
-        stage('docker Push') {
+        stage('Kubernetes Deployment') {
             steps {
                 sh "kubectl rollout restart deployment/frontend -n bank"
             }
